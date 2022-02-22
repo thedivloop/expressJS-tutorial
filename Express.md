@@ -1,4 +1,4 @@
-# Express JS tutorial
+# Express JS tutorial - Part 1 : Basics
 
 This document describes the basics of setting up [ExpressJS](https://expressjs.com).
 
@@ -306,9 +306,12 @@ $ It is working!!
 
 After the previous part and understanding the basics of an `express app` setup, let's make sure what we do has some additional meaningful use.
 
-First let's make sure we can receive `json` data from the client. In fact, most of the times a server is receiving from and returning to the client a JSON object.
+First let's make sure we can receive `json` data from the client. In fact, very often a server is receiving from and returning to the client a JSON object when operating in client side rendering.
 
-To do so we need to set out some `middleware`. That is a big word but simply means our `express app` will be using some code or configuration when running. Middleware is set up using the `use` method on our `app`.
+Client side rendering means the server will send data to the client usually in JSON format, and the client will then process it and render it to the user through the browser window. The opposite would be server side rendering where server would serve `HTML` files that the browser would directly show to the user.
+Obviously in between there are other techniques of prerendering we will not be describing here, mostly used for website performance optimization.
+
+To do so we need to set out some `middleware`. That is a big word but simply means our `express app` will be using some code or configuration when running. `Middleware` are functions that will run between the client request and the server response. Find more information on middleware [here](https://www.geeksforgeeks.org/middleware-in-express-js/). Our middleware is set up using the `use` method on our `app`.
 
 _index.js_
 
@@ -492,7 +495,7 @@ _package.json_
 ...
 ```
 
-The way `dotenv` works is simple. We create a `.env` file.
+The way `dotenv` works is simple. We create a `.env` file in the `server` folder.
 
 ```
 $ touch .env
@@ -1041,11 +1044,12 @@ This is just designed to help those like me in the dark and trying to get starte
 
 From here there are some natural and somehow obvious steps or directions.
 
-1. Put the routes code in a different file, maybe called `routes`
+1. Organize code in different files for example `routes`, `views`, `controllers`, etc
 2. Use a separate persistant data storage like a database (`mysql`, `sqlite`, `mongoDB`), a `json` server or even a `googlesheet`.
-3. Connect a front end to go along with this backend
-4. Add protected routes with authentication and authorization
-5. Deploy to internet and share it with other people.
+3. Add server side rendering to provide user with an nice `HTML` in his browser
+4. Add client side rendering with a front end code connecting to this server via `API`
+5. Add protected routes with authentication and authorization
+6. Deploy to internet and share it with other people.
 
 I am working on other written tutorials like this one, so keep posted!
 
@@ -1064,6 +1068,26 @@ Brad Traversy is just a great person, with top notch content. I believe that onl
 [Web Dev Simplified](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw) Kyle is the go to when it comes to understanding how to design software. He has coverered most of the software design patterns
 
 [PedroTech](https://www.youtube.com/channel/UC8S4rDRZn6Z_StJ-hh7ph8g) Pedro has a great channel with very nice playlists in tutorials covering javascript subjects in both front end and back end.
+
+---
+
+## Changes
+
+- Added Server rendering vs client side rendering explanation
+- Added Middleware explanation
+- Added Packages list
+- Modified next steps
+- Modified title
+
+---
+
+## Installed packages
+
+### [ExpressJS](https://expressjs.com)
+
+### [dotenv](https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/)
+
+### [nodemon](https://www.npmjs.com/package/nodemon)
 
 ---
 
